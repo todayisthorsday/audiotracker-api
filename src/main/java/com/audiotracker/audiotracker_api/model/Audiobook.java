@@ -1,7 +1,7 @@
 package com.audiotracker.audiotracker_api.model;
 
 import jakarta.persistence.*;
-import jakarta.websocket.Session;
+import com.audiotracker.audiotracker_api.model.Session;
 
 import java.util.List;
 
