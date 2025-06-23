@@ -1,7 +1,7 @@
 package com.audiotracker.audiotracker_api.model;
 
 import jakarta.persistence.*;
-import org.apache.catalina.User;
+import com.audiotracker.audiotracker_api.model.User;
 
 import java.time.LocalDate;
 
