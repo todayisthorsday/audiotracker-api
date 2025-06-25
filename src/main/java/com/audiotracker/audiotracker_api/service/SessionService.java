@@ -35,4 +35,8 @@ public class SessionService {
     public void deleteSession(long sessionId) {
         sessionRepo.deleteById(sessionId);
     }
+
+    public Integer getTotalListeningByUser(Long userId) {
+        return sessionRepo.totalListeningByUser(userId);
+    }
 }
