@@ -29,7 +29,7 @@ public class SessionController {
 
     @PostMapping
     public ResponseEntity<Session> createSession(@RequestBody Session session) {
-        return sessionService.createSession(Session);
+        return ResponseEntity.ok(sessionService.createSession(session));
     }
 
     @PutMapping("/{id}")

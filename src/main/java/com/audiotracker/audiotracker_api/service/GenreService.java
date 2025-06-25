@@ -23,9 +23,9 @@ public class GenreService {
     public Genre createGenre(Genre genre) {
         return genreRepo.save(genre);
     }
-    public Genre updateGenre(Long id, updatedGenre) {
+    public Genre updateGenre(Long id, Genre updatedGenre) {
         return genreRepo.findById(id).map(genre -> {
-            genre.setName(updateGenre().getName());
+            genre.setName(updatedGenre.getName());
             genre.setDescription(updatedGenre.getDescription());
             return genreRepo.save(genre);
         }).orElse(null);

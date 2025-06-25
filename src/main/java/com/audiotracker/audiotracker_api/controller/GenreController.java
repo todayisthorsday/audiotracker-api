@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/genres/")
+@RequestMapping("/api/genres")
 public class GenreController {
 
     @Autowired
@@ -28,6 +28,11 @@ public class GenreController {
     }
 
     @PostMapping
+    public Genre createGenre(@RequestBody Genre genre) {
+        return genreService.createGenre(genre);
+    }
+
+    @PutMapping("/{id}")
     public ResponseEntity<Genre> updateGenre(@PathVariable Long id, @RequestBody Genre genre) {
         Genre updated = genreService.updateGenre(id, genre);
         return (updated != null) ? ResponseEntity.ok(updated) : ResponseEntity.notFound().build();
