@@ -28,10 +28,9 @@ public class SessionController {
     }
 
     @GetMapping("/user/{userId}/total-time")
-    public ResponseEntity<Double> getTotalListeningTime(@PathVariable Long userId) {
+    public ResponseEntity<Integer> getTotalListeningTime(@PathVariable Long userId) {
         Integer total = sessionService.getTotalListeningByUser(userId);
         return (total != null) ? ResponseEntity.ok(total) : ResponseEntity.notFound().build();
-
     }
 
     @PostMapping
