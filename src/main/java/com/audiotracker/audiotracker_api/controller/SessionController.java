@@ -1,5 +1,6 @@
 package com.audiotracker.audiotracker_api.controller;
 
+import com.audiotracker.audiotracker_api.model.Audiobook;
 import com.audiotracker.audiotracker_api.model.Session;
 import com.audiotracker.audiotracker_api.service.SessionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,4 +50,11 @@ public class SessionController {
         sessionService.deleteSession(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/user/{userId}/audiobooks")
+    public ResponseEntity<List<Audiobook>> getAudiobooksByUser(@PathVariable Long userId) {
+        List<Audiobook> audiobooks = sessionService.getAudiobooksByUser(userId);
+        return audiobooks.isEmpty() ? ResponseEntity.notFound().build() : ResponseEntity.ok(audiobooks);
+    }
+
 }
