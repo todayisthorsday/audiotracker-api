@@ -25,6 +25,10 @@ public class AudiobookService {
         return audiobookRepo.findBySessionsUserId(userId);
     }
 
+    public List<Audiobook> getAudiobooksByGenre(Long genreId) {
+        return audiobookRepo.findByGenreId(genreId);
+    }
+
     public Audiobook createAudiobook(Audiobook audiobook) {
         return audiobookRepo.save(audiobook);
     }
