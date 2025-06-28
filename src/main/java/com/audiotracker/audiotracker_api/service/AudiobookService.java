@@ -21,6 +21,10 @@ public class AudiobookService {
         return audiobookRepo.findById(id);
     }
 
+    public List<Audiobook> getAudiobooksByUser(Long userId) {
+        return audiobookRepo.findBySessionsUserId(userId);
+    }
+
     public Audiobook createAudiobook(Audiobook audiobook) {
         return audiobookRepo.save(audiobook);
     }
