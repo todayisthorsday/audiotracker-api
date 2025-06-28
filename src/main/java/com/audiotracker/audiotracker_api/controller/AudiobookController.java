@@ -33,6 +33,12 @@ public class AudiobookController {
             return ResponseEntity.ok(books);
         }
 
+  @GetMapping("/genre/{genreId}")
+        public ResponseEntity<List<Audiobook>> getAudiobooksByGenre(@PathVariable Long genreId) {
+        List<Audiobook> books = audiobookService.getAudiobooksByGenre(genreId);
+        return ResponseEntity.ok(books);
+        }
+
     @PostMapping
     public Audiobook createAudiobook(@RequestBody Audiobook audiobook) {
         return audiobookService.createAudiobook(audiobook);
