@@ -40,7 +40,6 @@ public class SessionController {
         return ResponseEntity.ok(sessions);
     }
 
-
     @PostMapping
     public ResponseEntity<Session> createSession(@RequestBody Session session) {
         return ResponseEntity.ok(sessionService.createSession(session));
