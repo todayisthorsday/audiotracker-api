@@ -13,10 +13,6 @@ public interface SessionRepo extends JpaRepository<Session, Long> {
     Integer totalListeningByUser(@Param("userId") Long userId);
     @Query("SELECT DISTINCT s.audiobook FROM Session s where s.user.id = :userId")
     List<Audiobook> findAudiobooksByUserId(@Param("userId") Long userId);
-    // SessionRepo.java
-    @Query("SELECT s.audiobook FROM Session s WHERE s.user.id = :userId")
-    List<Audiobook> findAudiobooksByUserId(@Param("userId") Long userId);
-
 }
 
 
