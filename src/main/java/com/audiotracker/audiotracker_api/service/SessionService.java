@@ -1,5 +1,6 @@
 package com.audiotracker.audiotracker_api.service;
 
+import com.audiotracker.audiotracker_api.model.Audiobook;
 import com.audiotracker.audiotracker_api.model.Session;
 import com.audiotracker.audiotracker_api.repository.SessionRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,11 @@ public class SessionService {
     public void deleteSession(long sessionId) {
         sessionRepo.deleteById(sessionId);
     }
+
+    public List<Audiobook> getAudiobooksByUser(Long userId) {
+        return sessionRepo.findAudiobooksByUserId(userId);
+    }
+
 
     public Integer getTotalListeningByUser(Long userId) {
         return sessionRepo.totalListeningByUser(userId);
