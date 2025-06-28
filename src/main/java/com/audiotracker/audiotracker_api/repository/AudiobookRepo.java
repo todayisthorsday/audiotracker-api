@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface AudiobookRepo extends JpaRepository<Audiobook, Long> {
     List<Audiobook> findBySessionsUserId(Long userId);
+    List<Audiobook> findByGenreId(Long genreId);
 }
