@@ -1,5 +1,6 @@
 package com.audiotracker.audiotracker_api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import com.audiotracker.audiotracker_api.model.User;
 
@@ -17,10 +18,12 @@ public class Session {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonIgnore
     private User user;
 
     @ManyToOne
     @JoinColumn(name = "audiobook_id")
+    @JsonIgnore
     private Audiobook audiobook;
 
     // GETTERS & SETTERS

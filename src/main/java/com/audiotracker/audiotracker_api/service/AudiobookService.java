@@ -21,14 +21,6 @@ public class AudiobookService {
         return audiobookRepo.findById(id);
     }
 
-    public List<Audiobook> getAudiobooksByUser(Long userId) {
-        return audiobookRepo.findBySessionsUserId(userId);
-    }
-
-    public List<Audiobook> getAudiobooksByGenre(Long genreId) {
-        return audiobookRepo.findByGenreId(genreId);
-    }
-
     public Audiobook createAudiobook(Audiobook audiobook) {
         return audiobookRepo.save(audiobook);
     }
@@ -45,5 +37,13 @@ public class AudiobookService {
     }
     public void deleteAudiobook(long id) {
         audiobookRepo.deleteById(id);
+    }
+
+    public List<Audiobook> getAudiobooksByUser(Long userId) {
+        return audiobookRepo.findBySessionsUserId(userId);
+    }
+
+    public List<Audiobook> getAudiobooksByGenre(Long genreId) {
+        return audiobookRepo.findByGenreId(genreId);
     }
 }
