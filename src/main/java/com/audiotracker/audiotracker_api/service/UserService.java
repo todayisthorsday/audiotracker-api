@@ -18,9 +18,11 @@ public class UserService {
         return userRepo.findAll();
     }
 
-    public Optional<User> getUserById(long id) {
+    public Optional<User> getUserById(Long id) {
         return userRepo.findById(id);
     }
+
+
 
     public User createUser(User user) {
         return userRepo.save(user);

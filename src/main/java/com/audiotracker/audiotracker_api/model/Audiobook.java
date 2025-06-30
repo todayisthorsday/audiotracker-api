@@ -1,5 +1,6 @@
 package com.audiotracker.audiotracker_api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import com.audiotracker.audiotracker_api.model.Session;
 
@@ -19,9 +20,11 @@ public class Audiobook {
 
     @ManyToOne
     @JoinColumn(name = "genre_id")
+    @JsonIgnore
     private Genre genre;
 
     @OneToMany(mappedBy = "audiobook", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Session> sessions;
 
     // GETTERS & SETTERS
