@@ -4,6 +4,7 @@ import com.audiotracker.audiotracker_api.model.Audiobook;
 import com.audiotracker.audiotracker_api.model.Session;
 import com.audiotracker.audiotracker_api.repository.SessionRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -44,8 +45,11 @@ public class SessionService {
     public List<Session> getSessionsByAudiobook(Long audiobookId) {
         return sessionRepo.findByAudiobookId(audiobookId);
     }
-
     public Integer getTotalListeningByUser(Long userId) {
         return sessionRepo.totalListeningByUser(userId);
+    }
+
+    public List<Session> getRecentSessions(int count) {
+        return sessionRepo.findRecentSessions(PageRequest.of(0, count));
     }
 }

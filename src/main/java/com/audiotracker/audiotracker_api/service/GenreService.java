@@ -17,9 +17,6 @@ public class GenreService {
     public List<Genre> getAllGenres() {
         return genreRepo.findAll();
     }
-    public Optional<Genre> getGenreById(long id) {
-        return genreRepo.findById(id);
-    }
     public Genre createGenre(Genre genre) {
         return genreRepo.save(genre);
     }
@@ -32,5 +29,9 @@ public class GenreService {
     }
     public void deleteGenre(long id) {
         genreRepo.deleteById(id);
+    }
+
+    public Optional<Genre> getGenreById(long id) {
+        return genreRepo.findById(id);
     }
 }

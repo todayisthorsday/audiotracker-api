@@ -27,17 +27,18 @@ public class AudiobookController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-  @GetMapping("/user/{userId}")
-        public ResponseEntity<List<Audiobook>> getAudiobooksByUser(@PathVariable Long userId) {
-            List<Audiobook> books = audiobookService.getAudiobooksByUser(userId);
-            return ResponseEntity.ok(books);
-        }
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<List<Audiobook>> getAudiobooksByUser(@PathVariable Long userId) {
+        List<Audiobook> books = audiobookService.getAudiobooksByUser(userId);
+        return ResponseEntity.ok(books);
+    }
 
   @GetMapping("/genre/{genreId}")
-        public ResponseEntity<List<Audiobook>> getAudiobooksByGenre(@PathVariable Long genreId) {
+    public ResponseEntity<List<Audiobook>> getAudiobooksByGenre(@PathVariable Long genreId) {
         List<Audiobook> books = audiobookService.getAudiobooksByGenre(genreId);
         return ResponseEntity.ok(books);
-        }
+    }
+
 
     @PostMapping
     public Audiobook createAudiobook(@RequestBody Audiobook audiobook) {

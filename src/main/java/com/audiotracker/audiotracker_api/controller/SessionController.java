@@ -63,4 +63,10 @@ public class SessionController {
         return audiobooks.isEmpty() ? ResponseEntity.notFound().build() : ResponseEntity.ok(audiobooks);
     }
 
+    @GetMapping("/recent")
+    public ResponseEntity<List<Session>> getRecentSessions(@RequestParam(defaultValue = "5") int count) {
+        List<Session> sessions = sessionService.getRecentSessions(count);
+        return ResponseEntity.ok(sessions);
+    }
+
 }
