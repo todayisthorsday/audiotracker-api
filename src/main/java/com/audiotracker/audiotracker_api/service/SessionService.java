@@ -42,6 +42,9 @@ public class SessionService {
         return sessionRepo.findAudiobooksByUserId(userId);
     }
 
+    public List<Session> getSessionsByAudiobook(Long audiobookId) {
+        return sessionRepo.findByAudiobookId(audiobookId);
+    }
     public Integer getTotalListeningByUser(Long userId) {
         return sessionRepo.totalListeningByUser(userId);
     }

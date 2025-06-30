@@ -34,6 +34,12 @@ public class SessionController {
         return (total != null) ? ResponseEntity.ok(total) : ResponseEntity.notFound().build();
     }
 
+    @GetMapping("/audiobook/{audiobookId}")
+    public ResponseEntity<List<Session>> getSessionsByAudiobook(@PathVariable Long audiobookId) {
+        List<Session> sessions = sessionService.getSessionsByAudiobook(audiobookId);
+        return ResponseEntity.ok(sessions);
+    }
+
     @PostMapping
     public ResponseEntity<Session> createSession(@RequestBody Session session) {
         return ResponseEntity.ok(sessionService.createSession(session));
