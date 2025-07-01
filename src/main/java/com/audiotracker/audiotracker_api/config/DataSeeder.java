@@ -24,7 +24,7 @@ public class DataSeeder {
         return args -> {
             // GENRE
             Genre horror = null, sciFi = null, fantasy = null, romance = null, memoir = null;
-            User denika = null, mel = null;
+            User denika = null, mel = null, colin = null;
             Audiobook a = null, b = null, c = null, d = null;
 
             if (genreRepo.count() == 0) {
@@ -71,6 +71,15 @@ public class DataSeeder {
                     newUser.setLocation("Newfoundland");
                     return userRepo.save(newUser);  // save new one if not found
                 });
+            }
+
+            // ADDITIONAL SEEDER INFO
+            if (userRepo.findByUsername("colintracker").isEmpty()) {
+                User newUser = new User();
+                newUser.setUsername("colintracker");
+                newUser.setPreferredGenre("sci-fi");
+                newUser.setLocation("Newfoundland");
+                userRepo.save(newUser);
             }
 
             // AUDIO BOOKS
