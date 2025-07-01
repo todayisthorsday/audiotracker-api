@@ -40,7 +40,7 @@ public class AudiobookService {
     }
 
     public List<Audiobook> getAudiobooksByUser(Long userId) {
-        return audiobookRepo.findBySessionsUserId(userId);
+        return audiobookRepo.findAudiobooksListenedByUser(userId);
     }
 
     public List<Audiobook> getAudiobooksByGenre(Long genreId) {
