@@ -23,6 +23,10 @@ public class Audiobook {
     @JsonIgnore
     private Genre genre;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     @OneToMany(mappedBy = "audiobook", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Session> sessions;
