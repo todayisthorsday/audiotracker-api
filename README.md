@@ -34,5 +34,6 @@ Create a MySQL database called `audiotracker_db` and update your `application.pr
 mvn spring-boot:run
 ```
 
+##
 Looking for the command-line interface that connects to this API?  
 Check out the [Audiobook Tracker CLI](https://github.com/todayisthorsday/audiotracker-cli)
